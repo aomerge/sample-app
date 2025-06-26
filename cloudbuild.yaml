@@ -12,7 +12,7 @@ steps:
       [
         "build",
         "-t",
-        "us-central1-docker.pkg.dev/qwiklabs-gcp-02-d87279478000/my-repository/hello-cloudbuild-dev:v2.0",
+        "us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild-dev:v1.0",
         "."
       ]
 
@@ -22,7 +22,7 @@ steps:
     args:
       [
         "push",
-        "us-central1-docker.pkg.dev/qwiklabs-gcp-02-d87279478000/my-repository/hello-cloudbuild-dev:v2.0"
+        "us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild-dev:v1.0"
       ]
 
   # Step 4: Apply the production deployment YAML file to the production namespace
