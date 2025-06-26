@@ -12,7 +12,7 @@ steps:
       [
         "build",
         "-t",
-        "us-east4-docker.pkg.dev/qwiklabs-gcp-02-d87279478000/my-repository/hello-cloudbuild-dev:v2.0",
+        "us-central1-docker.pkg.dev/qwiklabs-gcp-02-d87279478000/my-repository/hello-cloudbuild-dev:v2.0",
         "."
       ]
 
@@ -22,7 +22,7 @@ steps:
     args:
       [
         "push",
-        "us-east4-docker.pkg.dev/qwiklabs-gcp-02-d87279478000/my-repository/hello-cloudbuild-dev:v2.0"
+        "us-central1-docker.pkg.dev/qwiklabs-gcp-02-d87279478000/my-repository/hello-cloudbuild-dev:v2.0"
       ]
 
   # Step 4: Apply the production deployment YAML file to the production namespace
@@ -30,7 +30,7 @@ steps:
     id: 'Deploy'
     args: ['-n', 'prod', 'apply', '-f', 'prod/deployment.yaml']
     env:
-    - 'CLOUDSDK_COMPUTE_REGION=us-east4-a'
+    - 'CLOUDSDK_COMPUTE_REGION=us-central1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=hello-cluster'
 options:
  logging: CLOUD_LOGGING_ONLY
